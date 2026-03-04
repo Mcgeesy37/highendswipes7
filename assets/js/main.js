@@ -71,3 +71,32 @@ globe.style.transform =
 }
 
 })
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document.querySelectorAll("section").forEach(section=>{
+
+observer.observe(section);
+
+});
+
+window.addEventListener("scroll",()=>{
+
+const scrolled = window.scrollY;
+
+document.querySelector(".hero-sphere").style.transform =
+`translateY(${scrolled * 0.2}px)`;
+
+});
