@@ -56,3 +56,18 @@ requestAnimationFrame(parallax)
 }
 
 parallax()
+
+window.addEventListener("scroll", () => {
+
+const scroll = window.scrollY
+
+const globe = document.querySelector(".hero-globe")
+
+if(globe){
+
+globe.style.transform =
+"translateY(calc(-50% + " + scroll*0.1 + "px))"
+
+}
+
+})
