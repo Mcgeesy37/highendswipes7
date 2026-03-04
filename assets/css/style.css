@@ -1,39 +1,75 @@
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
 body{
 
-background:#0a0a0a;
+background:#050505;
 color:white;
-font-family:system-ui;
-margin:0;
+font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto;
+overflow-x:hidden;
 
 }
+
+/* HEADER */
 
 header{
 
 display:flex;
 justify-content:space-between;
-padding:30px 60px;
+align-items:center;
+padding:28px 60px;
+
+position:fixed;
+width:100%;
+z-index:10;
+
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(20px);
 
 }
 
 nav a{
 
-margin-left:30px;
-color:#bbb;
+margin-left:28px;
 text-decoration:none;
+color:#b8b8b8;
+font-size:15px;
 
 }
+
+nav a:hover{
+
+color:white;
+
+}
+
+/* HERO */
 
 .hero{
 
 display:flex;
 align-items:center;
-padding:120px 60px;
+height:100vh;
+padding:0 60px;
 
 }
 
 .hero-left{
 
-max-width:600px;
+max-width:640px;
+z-index:2;
+
+}
+
+.tag{
+
+color:#c6a76a;
+letter-spacing:2px;
+font-size:12px;
+margin-bottom:16px;
 
 }
 
@@ -41,37 +77,88 @@ max-width:600px;
 
 font-size:64px;
 line-height:1.1;
+font-weight:700;
 
 }
 
 .sub{
 
-color:#aaa;
-margin-top:20px;
+margin-top:22px;
+color:#8e8e8e;
+max-width:520px;
+
+}
+
+.hero-buttons{
+
+margin-top:30px;
 
 }
 
 .btn-primary{
 
 background:#c6a76a;
-padding:14px 26px;
-border-radius:10px;
 color:black;
-margin-right:10px;
+padding:14px 24px;
+border-radius:12px;
+margin-right:14px;
+cursor:pointer;
 
 }
+
+.btn-secondary{
+
+border:1px solid #444;
+padding:14px 24px;
+border-radius:12px;
+
+}
+
+/* GLOBE */
 
 .hero-globe{
 
 position:absolute;
-right:0;
-top:120px;
+right:5%;
+top:50%;
+transform:translateY(-50%);
 
 }
+
+/* HERO GLOW */
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+right:-200px;
+top:50%;
+
+width:800px;
+height:800px;
+
+background:radial-gradient(circle,rgba(198,167,106,0.25),transparent 60%);
+
+filter:blur(160px);
+
+transform:translateY(-50%);
+
+}
+
+/* SERVICES */
 
 .services{
 
 padding:120px 60px;
+
+}
+
+.services h2{
+
+font-size:42px;
+margin-bottom:40px;
 
 }
 
@@ -83,13 +170,36 @@ gap:40px;
 
 }
 
+/* GLASS CARDS */
+
 .card{
 
-background:#111;
-padding:30px;
-border-radius:12px;
+background:rgba(255,255,255,0.03);
+border:1px solid rgba(255,255,255,0.05);
+
+padding:32px;
+border-radius:18px;
+
+backdrop-filter:blur(20px);
+
+transition:0.4s;
 
 }
+
+.card:hover{
+
+transform:translateY(-6px);
+border:1px solid #c6a76a;
+
+}
+
+.card h3{
+
+margin-bottom:10px;
+
+}
+
+/* PRICING */
 
 .pricing{
 
@@ -99,28 +209,70 @@ padding:120px 60px;
 
 .price-grid{
 
-display:flex;
+display:grid;
+grid-template-columns:repeat(3,1fr);
 gap:40px;
 
 }
 
 .price-card{
 
-background:#111;
+background:rgba(255,255,255,0.03);
 padding:40px;
-border-radius:16px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.06);
+
+transition:0.4s;
+
+}
+
+.price-card:hover{
+
+transform:translateY(-8px);
+border:1px solid #c6a76a;
 
 }
 
 .price{
 
-font-size:40px;
+font-size:46px;
+margin:20px 0;
 color:#c6a76a;
 
 }
 
-.featured{
+.price-card ul{
 
-border:1px solid #c6a76a;
+list-style:none;
+
+}
+
+.price-card li{
+
+margin:10px 0;
+color:#aaa;
+
+}
+
+/* CONTACT */
+
+#contact{
+
+padding:120px 60px;
+
+}
+
+footer{
+
+padding:40px 60px;
+border-top:1px solid #222;
+margin-top:80px;
+
+}
+
+footer a{
+
+margin-right:20px;
+color:#999;
 
 }
