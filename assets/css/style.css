@@ -342,3 +342,72 @@ transition:0.3s;
 transform:translateY(-2px);
 }
 
+.hero-sphere{
+animation: floatSphere 8s ease-in-out infinite;
+}
+
+@keyframes floatSphere{
+
+0%{
+transform:translateY(0px) rotate(0deg);
+}
+
+50%{
+transform:translateY(-25px) rotate(10deg);
+}
+
+100%{
+transform:translateY(0px) rotate(0deg);
+}
+
+}
+
+.projects-grid img{
+
+width:100%;
+border-radius:12px;
+transition: all .4s ease;
+
+}
+
+.projects-grid img:hover{
+
+transform:scale(1.05);
+box-shadow:0 30px 80px rgba(0,0,0,0.6);
+
+}
+
+section{
+
+opacity:0;
+transform:translateY(60px);
+transition:all .8s ease;
+
+}
+
+section.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+button{
+
+background:#c8a96a;
+border:none;
+padding:14px 30px;
+border-radius:8px;
+
+transition:all .3s ease;
+
+}
+
+button:hover{
+
+box-shadow:0 0 30px rgba(200,169,106,0.6);
+transform:translateY(-2px);
+
+}
+
+
